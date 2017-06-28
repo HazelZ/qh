@@ -1,0 +1,23 @@
+{
+  "name": "dlut",
+  "description": "demo version",
+  "main": "index.js",
+  "authors": [
+    "Hazel"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "dlut"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

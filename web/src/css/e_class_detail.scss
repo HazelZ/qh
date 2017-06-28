@@ -1,0 +1,406 @@
+@import 'base.scss'; 
+@import 'header.scss'; 
+@import 'footer.scss'; 
+body{
+  background-color: #f2f2f2;
+}
+
+/* crumb*/
+.my-breadcrumb{
+    list-style: none;
+    padding: 20px 0;
+    margin:0;
+    li{
+      display: inline-block;
+      font-size:1.2rem;
+      a{
+           font-size:1.2rem;
+          &,&:link,&:visited,&:hover,&:active{
+            color:#555;
+            text-decoration: none;
+            display: inline-block;
+          }
+        }
+      }
+    li + li:before {
+      padding:0 5px 0 0;
+      color: #333;
+      content: "\003e";
+      &.active{
+        color:#999;
+      }
+    }   
+  }
+  /* titlebox*/
+.eclass-detail-box{
+    width: 100%;
+    padding:30px;
+    overflow: hidden;
+      .detail-thumb{
+        float: left;
+        width: 40%;
+        height: 260px;
+        max-height: 260px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .detail-brief{
+        width: 55%;
+        height: 260px;
+        max-height: 260px;
+        margin-left: 45%;
+        position:relative;
+          .detail-title{
+            width: 100%;
+            margin:0 0 30px 0;
+          }
+          .detail-time{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+              p{
+                display: inline-block;
+                margin:0 80px 0 0;
+                height: 20px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                line-height: 20px;
+                font-size:16px;
+                color:#666;
+                span{
+                  margin-left: 5px;
+                }
+                  i{
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 5px;
+                  }
+              }
+              p:first-child>i{
+                background: url(../../imgs/icon_eclass_total_time.png) no-repeat 50%;
+              }
+               p:nth-child(2)>i{
+                background: url(../../imgs/icon_eclass_time.png) no-repeat 50%;
+              }
+          }
+          .detail-depar{
+            width: 100%;
+            overflow: hidden;
+            .tag-title{
+              width: 8%;
+              font-size:14px;
+              font-weight:bold;
+              display: inline-block; 
+              float: left;
+              }
+              .tags{
+                  width: 92%;
+                  overflow: hidden; 
+                  float: left;
+                  a{
+                    display: inline-block;
+                    margin-right: 10px;
+                    font-size: 14px;
+                    float: left;
+                    color: #ff8800;
+                    margin-bottom: 5px;
+                    text-decoration: none;
+                    &:link,&:visited,&:hover,&:active{
+                      text-decoration: none;
+                      color: #ff8800;
+                    }
+                  }
+              }
+          }
+          .detail-tag{
+            width: 100%;
+            overflow: hidden;
+            .tag-title{
+              width: 8%;
+              font-size:14px;
+              font-weight:bold;
+              display: inline-block; 
+              float: left;
+              }
+              .tags{
+                width: 92%;
+                overflow: hidden; 
+                float: left;
+                a{
+                  display: inline-block;
+                  float: left;
+                  margin-right: 10px;
+                  padding: 0 8px; 
+                  font-size: 14px;
+                  border-radius: 2px;
+                  border:1px solid #999;
+                  color: #999;           
+                  text-decoration: none;
+                  &:link,&:visited,&:hover,&:active{
+                    text-decoration: none;
+                    color: #999;
+                  }
+                }
+              }
+          }
+          .my-button{
+            display: inline-block;
+            text-align: center;
+            color:#fff;
+            font-size:18px;
+            background-color: #3b75eb;
+            padding:15px 100px;
+            margin-top: 20px;
+            text-decoration: none;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            &:hover{
+              -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.24), 0 5px 20px rgba(0,0,0,.12);
+                      box-shadow: 0 5px 10px rgba(0,0,0,.24), 0 5px 20px rgba(0,0,0,.12);
+              -webkit-transform: translateY(-2px);
+                      transform: translateY(-2px);
+              text-decoration: none;   
+            }
+          }
+          .detail-like{
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            top:0;
+            right: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align:center;
+                -ms-flex-align:center;
+                    align-items:center;
+            i{
+               display: inline-block;
+                  width: 20px;
+                  height: 20px;
+                  margin-right: 5px;
+                  background: url(../../imgs/icon_like.png) no-repeat 50%;
+            }
+            a{
+               font-size:16px;
+              &:link,&:visited,&:active{
+                text-decoration: none;
+                color: #999;
+                }
+                &:hover{
+                  color:#3b75eb;
+                }
+              }
+          }   
+      }
+}
+
+/* 下左*/
+.eclass-index-left{
+  float: left;
+  width: 850px; 
+    .tab-component{
+      width: 100%;
+      padding:30px 40px;
+      background: #fff;
+        .tab-component-nav{
+          height: 55px;
+          border-bottom: 1px solid #eee;
+            ul{
+            &:after{
+              content:".";display:block;height:0;clear:both;visibility:hidden;
+            }
+            li{
+              float: left;
+              width: 113px;
+              height: 54px;
+              line-height: 54px;
+              font-size: 16px;
+              color: #333;
+              text-align: center;         
+              cursor: pointer;     
+              &:hover{
+                  color: #3b75eb;                            
+              }          
+            }
+            .tab-component-nav-act{
+              color: #3b75eb;
+              border-bottom: 3px solid #3b75eb;              
+            }
+          }    
+        }
+        .tab-component-box{
+          .tab-component-item-act{
+            display: block!important;
+            .eclass-content{
+              h2{
+                font-size: 18px;
+                color: #333;
+                margin-bottom: 25px;
+                margin-top: 25px;
+              }
+              p{
+                font-size: 14px;
+                color: #666;
+                line-height: 24px;
+              }
+              .ygj-div{
+                  &:after{
+                    content:".";display:block;height:0;clear:both;visibility:hidden;
+                  }
+                  dl{
+                    width: 130px;
+                    float: left;
+                    dt{
+                      width: 100%;
+                      text-align: center;
+                    }
+                    dd{
+                      margin-top: 25px;
+                      font-size: 16px;
+                      text-align: center;
+                      color: #666;
+                    }
+                  }
+              }
+           }
+          }
+          .tab-component-item{
+            display: none;   
+        } 
+      }     
+    }            
+  
+}
+/* 下右*/
+.eclass-index-right{
+  float: left;
+  width: 300px;
+  margin-left:50px; 
+  .eclass-teacher{
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      overflow: hidden;
+        h4{
+          font-size: 16px;
+          color: #333;
+          padding-bottom: 18px;
+          border-bottom: 1px solid #eee;
+          margin-bottom: 10px;
+          overflow: hidden;
+            .icon-teacher{
+                display: block;
+                width: 20px;
+                height: 20px;
+                background:url(../../imgs/icon_eclass_teacher.png) no-repeat 50%;
+                background-repeat: no-repeat;
+                margin-right: 8px;
+                float: left;
+            }
+            span{
+              float: left;
+              line-height: 20px;
+            } 
+        }
+        .inner-box{
+          padding:10px 0;
+          overflow: hidden;
+            img{
+              display: inline-block;
+              float: left;
+              width: 66px;
+              height: 66px;
+              border-radius: 100%;
+            }
+            div{
+              display: inline-block;
+              float: left;
+              margin-left: 20px;
+                h5{
+                  font-size: 16px;
+                  color: #333;
+                  padding-top: 10px;
+                   a{
+                      color: #333;
+                      &:hover{
+                        color: #3b75eb;
+                      }
+                   }
+                }
+                p{
+                  margin-top: 10px;
+                  font-size: 12px;
+                  color: #666;
+                }
+            }
+        }         
+    }
+    .eclass-recomend{
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 30px;
+      overflow: hidden;
+        h4{
+            font-size: 16px;
+            color: #333;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+            overflow: hidden;
+            span{
+                float: left;
+                line-height: 20px;
+            }
+            .icon-medal{
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+                float: left;
+                background: url(../../imgs/icon_eclass_medal.png) no-repeat 50%;
+            }                    
+          }
+          .inner-box{
+            padding:10px 0;
+            overflow: hidden;
+             h5{
+                a,a:link,a:visited,a:active{
+                  display: block;
+                  width: 100%;
+                  font-size: 16px;
+                  color: #333;
+                  padding: 10px 0;
+                  text-decoration: none;  
+                }
+                a:hover{
+                  color:#3b75eb;
+                  text-decoration: none;
+                }
+              } 
+            a{
+            display: block;
+            width: 100%;
+             img{
+              display: block;
+              float: left;
+              width: 100%;
+              height: 150px;                    
+              } 
+            }                                                
+          }
+          
+  }     
+}   
+  
+
