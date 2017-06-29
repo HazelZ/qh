@@ -13,20 +13,17 @@ module.exports = {
 		e_class_play:'./e_class_play.js'
 	},
     output: {
-        path:__dirname +'/dist/js/',
-        publicPath: './',
+        path:__dirname+ '/dist/',
+        publicPath: '/dist/',
         filename: '[name].js', 
         chunkFilename:'[name].js'
     },
 	module: {
-	    loaders: [{
-	        test: /\.jsx?$/,
-	        loaders: ['babel-loader'],
-	        exclude: /node_modules/
-	    },
-	    { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
-	    { test: /\.scss$/, loaders: ['style-loader', 'css-loader','sass-loader'] },
-	    { test: /\.(png|jpg)$/,loader: 'url-loader?limit=81928888&name=images/[hash:8].[name].[ext]'}
+	    loaders: [
+		    {test: /\.jsx?$/,loaders: ['babel-loader'],exclude: /node_modules/},
+		    { test: /\.css$/, loaders: ['style-loader', 'css-loader','postcss-loader'] },
+		    { test: /\.scss$/, loaders: ['style-loader', 'css-loader','sass-loader'] },
+		    { test: /\.(png|jpg)$/,loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'}
 	    ]
 	}
 }
